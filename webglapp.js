@@ -10,12 +10,6 @@ import * as quat from '../lib/glmatrix/quat.js'
 import { OBJLoader } from '../../assignment3.objloader.js'
 import { Scene, SceneNode } from './scene.js'
 
-/**
- * @Class
- * WebGlApp that will call basic GL functions, manage a list of shapes, and take care of rendering them
- * 
- * This class will use the Shapes that you have implemented to store and render them
- */
 class WebGlApp 
 {
     /**
