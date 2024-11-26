@@ -12,13 +12,6 @@ import { Scene, SceneNode } from './scene.js'
 
 class WebGlApp 
 {
-    /**
-     * Initializes the app with a box, and the model, view, and projection matrices
-     * 
-     * @param {WebGL2RenderingContext} gl The webgl2 rendering context
-     * @param {Map<String,Shader>} shader The shaders to be used to draw the object
-     * @param {AppState} app_state The state of the UI
-     */
     constructor( gl, shaders, app_state )
     {
         // Set GL flags
