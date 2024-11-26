@@ -1,10 +1,10 @@
 'use strict'
 
-import * as mat4 from './js/lib/glmatrix/mat4.js'
-import * as vec3 from './js/lib/glmatrix/vec3.js'
-import * as quat4 from './js/lib/glmatrix/quat.js'
+import * as mat4 from '../lib/glmatrix/mat4.js'
+import * as vec3 from '../lib/glmatrix/vec3.js'
+import * as quat4 from '../lib/glmatrix/quat.js'
 
-import Material from './js/app/material.js'
+import Material from './material.js'
 
 
 /**

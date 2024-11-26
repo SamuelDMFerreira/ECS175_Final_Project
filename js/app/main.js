@@ -1,6 +1,6 @@
 'use strict'
 
-import App from './app/app.js'
+import App from './app.js'
 
 /**
  * Entry point to the application

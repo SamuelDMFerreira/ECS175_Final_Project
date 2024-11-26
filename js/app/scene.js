@@ -1,26 +1,14 @@
 'use strict'
 
-import { ShadedObject3D } from "../../assignment3.object3d.js"
+import { ShadedObject3D } from "./object3d.js"
 import { SHADER_MAX_LIGHTS, hex2rgb, json2transform } from "../utils/utils.js"
 import * as mat4 from "../lib/glmatrix/mat4.js"
 import * as quat4 from "../lib/glmatrix/quat.js"
 
-import { OBJLoader } from "../../assignment3.objloader.js"
+import { OBJLoader } from "./objloader.js"
 import { Light, AmbientLight, DirectionalLight, PointLight } from "./light.js"
 
 
-/**
- * A Scene represents a set of objects to be drawn on screen
- * Scenes are configured with a scene file which is loaded from disk
- * The Scene contains a scenegraph which is a hierarchical representation 
- * of all the objects in the scene. Each node in the scene graph has a 
- * transformation and transformations are cascaded through the graph.
- * 
- * Some nodes are purely virtual and others contain geometry
- * Virtual nodes are represented by the class SceneNode
- * Geometry nodes are represented by the class ModelNode
- * 
- */
 class Scene {
 
     /**

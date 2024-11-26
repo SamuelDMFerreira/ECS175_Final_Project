@@ -38,7 +38,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #ffecc2;
+    background-color: #dcb9cd;
 }
 
 #header-container {
@@ -46,7 +46,7 @@ a {
 }
 
 .settings-container {
-    background-color: #fff8e9;
+    background-color: #fbe9f5;
     display: flex;
     width: 100%;
     padding: 0.25em;

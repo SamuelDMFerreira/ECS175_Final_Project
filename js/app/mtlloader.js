@@ -1,8 +1,8 @@
 'use strict'
 
-import { loadExternalFile, getFileDir } from './js/utils/utils.js'
-import Material from './js/app/material.js'
-import Texture from './assignment3.texture.js'
+import { loadExternalFile, getFileDir } from '../utils/utils.js'
+import Material from './material.js'
+import Texture from './texture.js'
 
 /**
  * A class to load MTL files from disk

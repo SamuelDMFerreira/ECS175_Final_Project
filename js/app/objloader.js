@@ -1,11 +1,11 @@
 'use strict'
 
-import { loadExternalFile, getFileDir } from './js/utils/utils.js'
-import { MTLLoader } from './assignment3.mtlloader.js'
-import Material from './js/app/material.js'
+import { loadExternalFile, getFileDir } from '../utils/utils.js'
+import { MTLLoader } from './mtlloader.js'
+import Material from './material.js'
 
-import * as vec3 from './js/lib/glmatrix/vec3.js'
-import * as vec2 from './js/lib/glmatrix/vec2.js'
+import * as vec3 from '../lib/glmatrix/vec3.js'
+import * as vec2 from '../lib/glmatrix/vec2.js'
 
 /**
  * A class to load OBJ files from disk
