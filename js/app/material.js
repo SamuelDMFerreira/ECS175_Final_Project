@@ -2,25 +2,9 @@
 
 import Texture from './texture.js'
 
-/**
- * The Material class is used to store material properties for Shaded Objects
- * 
- * It contains material properties and textures used in Goraud and Phong shading (among others)
- * 
- */
+
 class Material {
 
-    /**
-     * Constructs a new material
-     * 
-     * @param {Array<Number>} kA Ambient color of the material
-     * @param {Array<Number>} kD Diffuse color of the material
-     * @param {Array<Number>} kS Specular color of the material
-     * @param {Number} shininess Shininess of the specular color
-     * @param {Texture} map_kD Optional image texture for this material
-     * @param {Texture} map_nS Optional roughness texture for this material
-     * @param {Texture} map_norm Optional normal texture for this material
-     */
     constructor( kA = [0,0,0], kD = [0,0,0], kS = [0,0,0], shininess = 1.0, map_kD = null, map_nS = null, map_norm ) {
         this.kA = kA
         this.kD = kD

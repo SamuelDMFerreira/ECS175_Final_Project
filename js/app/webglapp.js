@@ -10,6 +10,10 @@ import * as quat from '../lib/glmatrix/quat.js'
 import { OBJLoader } from './objloader.js'
 import { Scene, SceneNode } from './scene.js'
 
+// Particle manager Import
+import particleManager from './particleManager.js'
+
+
 /**
  * @Class
  * WebGlApp that will call basic GL functions, manage a list of shapes, and take care of rendering them
@@ -32,12 +36,23 @@ class WebGlApp
 
         // Store the shader(s)
         this.shaders = shaders // Collection of all shaders
+        // this.modelMatrix = mat4.create();
         this.box_shader = this.shaders[0]
+        this.particle_shader = this.shaders[0]      // PARTICLE SHADER +++
         this.light_shader = this.shaders[this.shaders.length - 1]
         this.active_shader = 1
         
-        // Create a box instance and create a variable to track its rotation
+        // Make new particle system ++++++++++++++++++++++++++++++++++++++
+        // particle input with shader 
+        this.particleManager = new particleManager(500, 6 ,gl, this.particle_shader);
+
+        
+
+        // Making a box
         this.box = new Box( gl, this.box_shader )
+
+
+        // others
         this.animation_step = 0
 
         // Declare a variable to hold a Scene
@@ -72,7 +87,7 @@ class WebGlApp
         // Use the shader's setUniform4x4f function to pass the matrices
         for (let shader of this.shaders) {
             shader.use()
-            shader.setUniform3f('u_eye', this.eye);
+            // shader.setUniform4x4f('u_m', this.modelMatrix);
             shader.setUniform4x4f('u_v', this.view)
             shader.setUniform4x4f('u_p', this.projection)
             shader.unuse()
@@ -180,6 +195,9 @@ class WebGlApp
                 this.updateSceneNode( scene_node, delta_time )
                 break
         }
+        
+        // Update particle time +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        this.particleManager.update(delta_time, gl);
     }
 
     /**
@@ -252,8 +270,9 @@ class WebGlApp
 
             for (let shader of this.shaders) {
                 shader.use()
-                shader.setUniform3f('u_eye', this.eye)
+                // shader.setUniform4x4f('u_m', this.modelMatrix)
                 shader.setUniform4x4f('u_v', this.view)
+                shader.setUniform4x4f('u_p', this.projection);
                 shader.unuse()
             }
         }
@@ -360,13 +379,19 @@ class WebGlApp
         this.setViewport( gl, canvas_width, canvas_height )
         this.clearCanvas( gl )
 
+        // Render the particle +++++++++++++++++++++++++++++++++++++++++++++++++
+        this.particleManager.render(gl, this.view, this.projection)
+
         // Render the box
-        // This will use the MVP that was passed to the shader
         this.box.render( gl )
 
         // Render the scene
         if (this.scene) this.scene.render( gl )
+        
 
+
+        // unbind at the end
+        gl.useProgram(null);
     }
 
 }

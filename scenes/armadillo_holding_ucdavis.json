@@ -11,7 +11,12 @@
         {
             "name": "platform",
             "obj": "./models/platform/platform.obj"
+        },
+        {
+            "name": "petal",
+            "obj": "./models/petal.obj"
         }
+        
     ],
     "lights": [
         {

@@ -4,26 +4,13 @@ import { loadExternalFile, getFileDir } from '../utils/utils.js'
 import Material from './material.js'
 import Texture from './texture.js'
 
-/**
- * A class to load MTL files from disk
- */
+
 class MTLLoader {
 
-    /**
-     * Constructs the loader
-     * 
-     * @param {String} filename The full path to the model MTL file on disk
-     */
     constructor(filename) {
         this.filename = filename
     }
-
-    /**
-     * Loads the file from disk and parses the material
-     * 
-     * @param {WebGL2RenderingContext} gl The webgl2 rendering context
-     * @returns {Map<String,Material>} The materials defined by the MTL mapped by their name
-     */
+    
     load( gl ) {
 
         // Load the file's contents

@@ -2,15 +2,11 @@
 
 import App from './app.js'
 
-/**
- * Entry point to the application
- */
+// Main Application
 function main( )
 {
-    
     const app = new App( )
     app.start( )
-
 }
 
 main( )

@@ -168,6 +168,11 @@ class Scene {
      * @returns {SceneNode} The parsed SceneNode
      */
     loadScenegraphNode( node_config, gl, shader, light_shader ) {
+        // debugging+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        if (!node_config || !node_config.type) {
+            throw new Error(`Invalid node configuration: ${JSON.stringify(node_config)}`);
+        }
+
         let node = null
 
         // Check the node's type
