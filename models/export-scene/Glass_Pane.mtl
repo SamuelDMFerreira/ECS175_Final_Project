@@ -1,0 +1,14 @@
+# Blender 4.2.3 LTS MTL File: 'lol.blend'
+# www.blender.org
+
+newmtl Glass.001
+Ka 0.100000 0.100000 0.100000
+Kd 0.388945 0.385848 0.376951
+Ks 0.388945 0.385848 0.376951
+Ke 0.000000 0.000000 0.000000
+Ni 2.000000
+d 1.000000
+illum 3
+map_Kd glass_basecolor.png
+map_Ns glass_roughness.jpg
+map_Bump -bm 0.600000 glass_normal.jpg

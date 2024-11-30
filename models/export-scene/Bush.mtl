@@ -1,0 +1,35 @@
+# Blender 4.2.3 LTS MTL File: 'lol.blend'
+# www.blender.org
+
+newmtl Branch_Material
+Ka 1.000000 1.000000 1.000000
+Kd 0.180000 0.180000 0.180000
+Ks 0.180000 0.180000 0.180000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd branch_basecolor.jpg
+map_Ns branch_roughness.jpg
+
+newmtl Leaf_Material
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.330000 0.330000 0.330000
+Ks 0.330000 0.330000 0.330000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd leaf_basecolor.jpg
+
+newmtl Stem_Material
+Ns 336.400055
+Ka 1.000000 1.000000 1.000000
+Kd 0.450000 0.450000 0.450000
+Ks 0.450000 0.450000 0.450000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd stem_basecolor.jpg

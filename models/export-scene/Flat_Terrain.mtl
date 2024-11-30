@@ -1,0 +1,14 @@
+# Blender 4.2.3 LTS MTL File: 'lol.blend'
+# www.blender.org
+
+newmtl Dirt_Material
+Ka 0.080000 0.080000 0.080000
+Kd 0.080000 0.080000 0.080000
+Ks 0.080000 0.080000 0.080000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd dirt_basecolor.png
+map_Ns dirt_roughness.png
+map_Bump -bm 1.000000 dirt_normal.png

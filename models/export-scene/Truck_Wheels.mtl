@@ -1,0 +1,25 @@
+# Blender 4.2.3 LTS MTL File: 'lol.blend'
+# www.blender.org
+
+newmtl Van_Tire_Material
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.010000 0.010000 0.010000
+Ks 0.010000 0.010000 0.010000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd vanTire_basecolor.png
+map_Bump -bm 1.000000 vanTire_normal.png
+
+newmtl Van_Wheel_Material
+Ns 37.321308
+Ka 1.000000 1.000000 1.000000
+Kd 0.100000 0.100000 0.100000
+Ks 0.100000 0.100000 0.100000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Kd vanWheel_baseColor.png

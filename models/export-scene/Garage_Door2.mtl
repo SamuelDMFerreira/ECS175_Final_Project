@@ -1,0 +1,14 @@
+# Blender 4.2.3 LTS MTL File: 'lol.blend'
+# www.blender.org
+
+newmtl Garage_Door_Material
+Ka 0.300000 0.300000 0.300000
+Kd 0.200000 0.200000 0.200000
+Ks 0.010000 0.010000 0.010000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd garageDoor_basecolor.png
+map_Ns garageDoor_roughness.png
+map_Bump -bm 1.000000 garageDoor_normal.png
