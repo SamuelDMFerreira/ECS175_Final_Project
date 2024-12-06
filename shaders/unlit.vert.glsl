@@ -1,5 +1,7 @@
 #version 300 es
 
+precision mediump float;
+
 in vec3 a_position;
 in vec3 a_center;
 in float a_angle; 
@@ -11,29 +13,25 @@ uniform mat4x4 u_p;
 out vec2 v_texcoord;
 
 void main() {
+    // Calculate rotation using the angle
+    float cosAngle = cos(a_angle);
+    float sinAngle = sin(a_angle);
 
-    // Apply rotation to the offsets
-    float cosA = cos(a_angle);
-    float sinA = sin(a_angle);
-    mat2 rotationMatrix = mat2(
-        cosA, -sinA,
-        sinA, cosA
+    // Rotation matrix around Z-axis
+    mat2 rotation = mat2(
+        cosAngle, -sinAngle,
+        sinAngle, cosAngle
     );
 
-    // Apply rotation to the position offset
-    vec2 rotatedOffset = rotationMatrix * a_position.xy;
+    // Apply rotation to the particle's position
+    vec2 rotatedPosition = rotation * a_position.xy;
 
-    // Combine the center position with the rotated offset
-    vec3 finalPosition = a_center + vec3(rotatedOffset, a_position.z);
-
-    // Apply slight randomness to create the organic look of flower petals
-    finalPosition.x += 0.005 * sin(a_angle * 3.0);
-    finalPosition.y += 0.005 * cos(a_angle * 2.0);
-
+    // Update the final position
+    vec3 finalPosition = a_center + vec3(rotatedPosition, a_position.z);
 
     // Convert to clip space
     gl_Position = u_p * u_v * vec4(finalPosition, 1.0);
     
-    v_texcoord = a_position.xy * 0.5 + 0.5;
+    v_texcoord = a_position.xy;
 
 }

@@ -9,7 +9,7 @@ out vec4 o_fragColor;
 
 void main() {
 
-    vec3 pinkColor = vec3(1.0, 0.75, 0.8);
+    vec3 pinkColor = vec3(0.85, 0.65, 0.8);
 
 
     o_fragColor = vec4(pinkColor, 1.0);

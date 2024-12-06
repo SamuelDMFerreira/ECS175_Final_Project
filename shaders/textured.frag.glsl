@@ -67,7 +67,9 @@ vec3 shadeAmbientLight(Material material, AmbientLight light) {
 
 // Shades a directional light and returns its contribution
 vec3 shadeDirectionalLight(Material material, DirectionalLight light, vec3 normal, vec3 eye, vec3 vertex_position) {
-    
+    // if (length(material.kS) == 0.0) {
+    //     material.kS = vec3(1.0);
+    // }
     // default light
     vec3 result = vec3(0);
     if (light.intensity == 0.0) return result;
@@ -93,6 +95,10 @@ vec3 shadeDirectionalLight(Material material, DirectionalLight light, vec3 norma
 
 // Shades a point light and returns its contribution
 vec3 shadePointLight(Material material, PointLight light, vec3 normal, vec3 eye, vec3 vertex_position) {
+
+    // if (length(material.kS) == 0.0) {
+    //     material.kS = vec3(1.0);
+    // }
 
     // TODO: Implement this
     // TODO: Use the material's map_kD and map_nS to scale kD and shininess

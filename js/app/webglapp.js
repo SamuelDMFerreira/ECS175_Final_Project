@@ -44,7 +44,7 @@ class WebGlApp
         
         // Make new particle system ++++++++++++++++++++++++++++++++++++++
         // particle input with shader 
-        this.particleManager = new particleManager(500, 6 ,gl, this.particle_shader);
+        this.particleManager = new particleManager(10000 ,gl, this.particle_shader);
 
         
 
@@ -67,8 +67,8 @@ class WebGlApp
         })
 
         // Create the view matrix
-        this.eye     =   [2.0, 0.5, -2.0]
-        this.center  =   [0, 0, 0]
+        this.eye     =   [0, 0, 0]
+        this.center  =   [.005, 0, -.05]
        
         this.forward =   null
         this.right   =   null
@@ -88,6 +88,7 @@ class WebGlApp
         for (let shader of this.shaders) {
             shader.use()
             // shader.setUniform4x4f('u_m', this.modelMatrix);
+            //shader.setUniform3f('u_eye', this.eye);
             shader.setUniform4x4f('u_v', this.view)
             shader.setUniform4x4f('u_p', this.projection)
             shader.unuse()
