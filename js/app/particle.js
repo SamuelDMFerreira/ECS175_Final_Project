@@ -19,7 +19,7 @@ class Particle {
 
         // Particle Shaoe ---------------------------------------------
         // size and shape from here
-        this.scale = 0.008
+        this.scale = 0.006
         this.vertices = this.getVertex();
     }
 
@@ -27,12 +27,15 @@ class Particle {
     // adjust shape here!!!
     getVertex(){
         return [
-            0.0, 0.05, 0.0,        // Top point
-            -0.05, -0.005, 0.0,    // Bottom-left
-            0.05, -0.005, 0.0,     // Bottom-right
-            -0.03, -0.1, 0.0,     // left-bottom
-            0.03, -0.1, 0.0       // right-bottom
-        ]
+            0.0, 0.05, 0.0,        // Tip of the petal (top)
+            -0.03, 0.002, 0.0,      // Left curve near the top
+            -0.05, -0.02, 0.0,     // Left curve middle
+            -0.03, -0.07, 0.0,     // Left bottom
+            0.0, -0.1, 0.0,        // Bottom point
+            0.03, -0.07, 0.0,      // Right bottom
+            0.05, -0.002, 0.0,      // Right curve middle
+            0.03, 0.02, 0.0        // Right curve near the top
+        ];
 
     }
 
@@ -61,6 +64,8 @@ class Particle {
         if (this.position.y <= -0.0070) {
             this.velocity.xyz = 0;
             this.rotationZ = Math.PI / 2; 
+            
+            this.life += deltaTime; 
         }
 
         else{

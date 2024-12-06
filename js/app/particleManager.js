@@ -3,6 +3,7 @@ import Particle from './particle.js';
 export default class particleManager {
     constructor(particleNum, gl, shader) {
         this.particleCount = particleNum;
+        this.VNum = 8;
         this.shader = shader;
 
         this.particleList = [];
@@ -17,7 +18,7 @@ export default class particleManager {
 
     createBuffer(gl) {
         // Gather all positions from particles
-        this.positions = new Float32Array(this.particleList.length * 3 * 5);
+        this.positions = new Float32Array(this.particleList.length * 3 * this.VNum);
         this.updateBufferData();
 
         // Create position buffer
@@ -30,9 +31,9 @@ export default class particleManager {
     updateBufferData() {
         for (let i = 0; i < this.particleList.length; i++) {
             let p = this.particleList[i];
-            let baseIndex = i * 3 * 5;
+            let baseIndex = i * 3 * this.VNum;
 
-            for (let j = 0; j < 5; j++) {
+            for (let j = 0; j < this.VNum; j++) {
 
                 let x = p.vertices[j * 3] * p.scale;
                 let y = p.vertices[j * 3 + 1] * p.scale;
@@ -91,7 +92,7 @@ export default class particleManager {
         // draw all vectex seperate
         for (let i = 0; i < this.particleCount; i++) {
             
-            gl.drawArrays(gl.TRIANGLE_STRIP, i * 5, 5);
+            gl.drawArrays(gl.TRIANGLE_FAN, i * this.VNum, this.VNum);
         }
 
         gl.bindVertexArray(null);
