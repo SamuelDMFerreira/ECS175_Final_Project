@@ -229,8 +229,60 @@ class WebGlApp
             view_dirty = true
         }
 
+        // Adding unity like controls
+        if (Input.isKeyDown('w'))
+        {
+            let translation = vec3.scale(vec3.create(), this.forward, -0.1 * delta_time);
+            // Translate both eye and center in parallel
+            this.eye = vec3.add(vec3.create(), this.eye, translation)
+            this.center = vec3.add(vec3.create(), this.center, translation)
+            view_dirty = true;    
+        }
+        else if (Input.isKeyDown('s'))
+        {
+            let translation = vec3.scale(vec3.create(), this.forward, 0.1 * delta_time);
+            // Translate both eye and center in parallel
+            this.eye = vec3.add(vec3.create(), this.eye, translation)
+            this.center = vec3.add(vec3.create(), this.center, translation)
+            view_dirty = true;    
+        } 
+        
+        if (Input.isKeyDown('a'))
+        {
+            let translation = vec3.scale(vec3.create(), this.right, -0.1 * delta_time);
+            // Translate both eye and center in parallel
+            this.eye = vec3.add(vec3.create(), this.eye, translation)
+            this.center = vec3.add(vec3.create(), this.center, translation)
+            view_dirty = true;    
+        }
+        else if (Input.isKeyDown('d'))
+        {
+            let translation = vec3.scale(vec3.create(), this.right, 0.1 * delta_time);
+            // Translate both eye and center in parallel
+            this.eye = vec3.add(vec3.create(), this.eye, translation)
+            this.center = vec3.add(vec3.create(), this.center, translation)
+            view_dirty = true;    
+        }
+
+        if (Input.isKeyDown(' '))
+        {
+            let translation = vec3.create()
+            if (Input.isKeyDown('Shift'))
+            {
+                translation = vec3.scale(vec3.create(), this.up, -0.1 * delta_time);
+            } 
+            else 
+            {
+                translation = vec3.scale(vec3.create(), this.up, 0.1 * delta_time); 
+            }
+            // Translate both eye and center in parallel
+            this.eye = vec3.add(vec3.create(), this.eye, translation)
+            this.center = vec3.add(vec3.create(), this.center, translation)
+            view_dirty = true;    
+        }
+
         // Control - Rotate
-        if (Input.isMouseDown(0) && !Input.isKeyDown(' ')) {
+        if (Input.isMouseDown(0) /*&& !Input.isKeyDown(' ')*/) {
             // Rotate around xz plane around y
             this.eye = vec3.rotateY(vec3.create(), this.eye, this.center, deg2rad(-10 * Input.getMouseDx() * delta_time ))
             
@@ -243,7 +295,7 @@ class WebGlApp
         }
 
         // Control - Pan
-        if (Input.isMouseDown(1) || (Input.isMouseDown(0) && Input.isKeyDown(' '))) {
+        if (Input.isMouseDown(1) /*|| (Input.isMouseDown(0) && Input.isKeyDown(' '))*/) {
             // Create translation on two view-aligned axes
             let translation = vec3.add(vec3.create(), 
                 vec3.scale(vec3.create(), this.right, -0.75 * Input.getMouseDx() * delta_time),
@@ -329,8 +381,8 @@ class WebGlApp
 
             translation = mat4.fromTranslation(mat4.create(),
                 vec3.add(vec3.create(), 
-                    vec3.scale(vec3.create(), this.right, 0.75 * Input.getMouseDx() * delta_time),
-                    vec3.scale(vec3.create(), this.up, -0.75 * Input.getMouseDy() * delta_time)
+                    vec3.scale(vec3.create(), this.right, 0.1 * Input.getMouseDx() * delta_time),
+                    vec3.scale(vec3.create(), this.up, -0.1 * Input.getMouseDy() * delta_time)
                 ))
 
             node_dirty = true
