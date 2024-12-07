@@ -408,6 +408,12 @@ class WebGlApp
 
             // Get the node's local transformation that we modify
             let transformation = node.getTransformation()
+            
+            let trnsl = vec3.create();
+            mat4.getTranslation(trnsl, transformation);
+            let rot = quat.create();
+            mat4.getRotation(rot, transformation);
+            console.log(trnsl, rot);
 
             // It's best to read this block from the bottom up
             // This is the order in which the transformations will take effect
