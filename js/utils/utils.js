@@ -3,6 +3,7 @@
 import * as mat4 from '../lib/glmatrix/mat4.js'
 import * as vec3 from '../lib/glmatrix/vec3.js'
 import * as quat4 from '../lib/glmatrix/quat.js'
+import { Keyframe, Animation } from '../../animations/animations.js'
 
 /**
  * Maximum number of lights per light type supported by our shaders
@@ -105,6 +106,36 @@ function getRelativeMousePosition( event )
     )
 }
 
+/**
+ * Extract animation from file 
+ * 
+ * @param {JSON} animation_config 
+ * 
+ */
+function json2animation( animation_config )
+{
+    let keyframes = 'Keyframes' in animation_config ? json2keyframes( animation_config.Keyframes ) : null; // fix this  
+    let duration = 'duration' in animation_config ? animation_config.duration : 0;
+    let loops = 'loops' in animation_config ? animation_config.loops : false;
+
+    return new Animation(keyframes, duration, loops);
+}
+
+/**
+ * Extract keyframes from JSON file
+ * 
+ * @param {JSON} keyframes_config
+ */
+function json2keyframes( keyframes_config )
+{
+    let Keyframes = [];
+    for (let keyframe_config of keyframes_config)
+    {
+        let keyframe = new Keyframe(keyframe_config.timeStamp, keyframe_config.position, keyframe_config.rotation);
+        Keyframes.push(keyframe);
+    }
+    return Keyframes;
+}
 
 /**
  * Extracts the directory path from a file path
@@ -129,5 +160,6 @@ export
     deg2rad,
     getRelativeMousePosition,
     json2transform,
+    json2animation,
     getFileDir
 }

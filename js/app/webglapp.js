@@ -173,6 +173,16 @@ class WebGlApp
         switch(app_state.getState('Control')) {
             case 'Camera':
                 this.updateCamera( delta_time )
+
+                if (this.scene == null)
+                    break
+
+                let scene_nodes = this.scene.getNodes();
+                for (let scene_node of scene_nodes)
+                {
+                    this.updateSceneNodeAnimation( scene_node, delta_time )
+                }
+
                 break
             case 'Scene Node':
                 // Only do this if a scene is loaded
@@ -262,6 +272,20 @@ class WebGlApp
             }
         }
     }
+
+    /** 
+     * Updates the animation, applies it to the node
+     * 
+     * @param {SceneNode} node The SceneNode containing the animation
+     * @param {Number} delta_time the time in seconds since the last frame (floating point number) 
+    */
+    updateSceneNodeAnimation( node, delta_time )
+    {
+        let transform = node.getTransformation();
+        let animation = node.getAnimation();
+        animation.update(delta_time);
+        node.setTransformation(animation.getNewTransform(transform, delta_time));
+    }    
 
     /**
      * Update a SceneNode's local transformation
