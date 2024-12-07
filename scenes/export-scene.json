@@ -778,6 +778,24 @@
                                 1
                             ]
                         },
+                        "animation":
+                        {
+                            "Keyframes":
+                            [
+                                {
+                                    "timeStamp": 4.0,
+                                    "position": [1,0,0],
+                                    "rotation": [1,0,0,0]
+                                },
+                                {
+                                    "timeStamp": 8.0,
+                                    "position": [0,0,0],
+                                    "rotation": [1,0,0,0]
+                                }
+                            ],
+                            "duration": 10.0, 
+                            "loops": true
+                        }, 
                         "children": []
                     },
                     {

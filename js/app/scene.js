@@ -1,7 +1,7 @@
 'use strict'
 
 import { ShadedObject3D } from "../../assignment3.object3d.js"
-import { SHADER_MAX_LIGHTS, hex2rgb, json2transform } from "../utils/utils.js"
+import { SHADER_MAX_LIGHTS, hex2rgb, json2transform, json2animation } from "../utils/utils.js"
 import * as mat4 from "../lib/glmatrix/mat4.js"
 import * as quat4 from "../lib/glmatrix/quat.js"
 
