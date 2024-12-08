@@ -368,8 +368,8 @@ class WebGlApp
         // Control - Rotate
         if (Input.isMouseDown(0) && !Input.isKeyDown(' ')) {
 
-            let rotation_up = mat4.fromRotation(mat4.create(), deg2rad(10 * Input.getMouseDx() * delta_time), this.up)
-            let rotation_right = mat4.fromRotation(mat4.create(), deg2rad(10 * Input.getMouseDy() * delta_time), this.right)
+            let rotation_up = mat4.fromRotation(mat4.create(), deg2rad(Input.getMouseDx() * delta_time), this.up)
+            let rotation_right = mat4.fromRotation(mat4.create(), deg2rad(Input.getMouseDy() * delta_time), this.right)
 
             rotation = mat4.multiply(mat4.create(), rotation_right, rotation_up)
 
@@ -381,8 +381,8 @@ class WebGlApp
 
             translation = mat4.fromTranslation(mat4.create(),
                 vec3.add(vec3.create(), 
-                    vec3.scale(vec3.create(), this.right, 0.1 * Input.getMouseDx() * delta_time),
-                    vec3.scale(vec3.create(), this.up, -0.1 * Input.getMouseDy() * delta_time)
+                    vec3.scale(vec3.create(), this.right, 0.025 * Input.getMouseDx() * delta_time),
+                    vec3.scale(vec3.create(), this.up, -0.025 * Input.getMouseDy() * delta_time)
                 ))
 
             node_dirty = true
