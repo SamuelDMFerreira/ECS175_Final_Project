@@ -10,6 +10,8 @@ import * as quat from '../lib/glmatrix/quat.js'
 import { OBJLoader } from '../../assignment3.objloader.js'
 import { Scene, SceneNode } from './scene.js'
 
+import particleManager from './particleManager.js'
+
 /**
  * @Class
  * WebGlApp that will call basic GL functions, manage a list of shapes, and take care of rendering them
@@ -33,8 +35,12 @@ class WebGlApp
         // Store the shader(s)
         this.shaders = shaders // Collection of all shaders
         this.box_shader = this.shaders[0]
+        this.particle_shader = this.shaders[0]      // PARTICLE SHADER
         this.light_shader = this.shaders[this.shaders.length - 1]
         this.active_shader = 1
+
+        // Particle system
+        this.particleManager = new particleManager(10000 ,gl, this.particle_shader)
         
         // Create a box instance and create a variable to track its rotation
         this.box = new Box( gl, this.box_shader )
@@ -184,6 +190,9 @@ class WebGlApp
                 this.updateSceneNode( scene_node, delta_time )
                 break
         }
+
+        // Update particle time
+        this.particleManager.update(delta_time, gl)
     }
 
     /**
@@ -364,12 +373,16 @@ class WebGlApp
         this.setViewport( gl, canvas_width, canvas_height )
         this.clearCanvas( gl )
 
+        this.particleManager.render(gl, this.view, this.projection)
+
         // Render the box
         // This will use the MVP that was passed to the shader
         this.box.render( gl )
 
         // Render the scene
         if (this.scene) this.scene.render( gl )
+
+            gl.useProgram(null)
 
     }
 
