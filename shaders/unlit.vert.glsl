@@ -1,21 +1,37 @@
 #version 300 es
 
-// an attribute will receive data from a buffer
-in vec3 a_position;
+precision mediump float;
 
-// transformation matrices
-uniform mat4x4 u_m;
+in vec3 a_position;
+in vec3 a_center;
+in float a_angle; 
+
+
 uniform mat4x4 u_v;
 uniform mat4x4 u_p;
 
+out vec2 v_texcoord;
+
 void main() {
+    // Calculate rotation using the angle
+    float cosAngle = cos(a_angle);
+    float sinAngle = sin(a_angle);
 
-    // set a point size for gl.POINTS draw mode
-    gl_PointSize = 2.0f;
+    // Rotation matrix around Z-axis
+    mat2 rotation = mat2(
+        cosAngle, -sinAngle,
+        sinAngle, cosAngle
+    );
 
-    // transform a vertex from object space directly to screen space
-    // the full chain of transformations is:
-    // object space -{model}-> world space -{view}-> view space -{projection}-> clip space
-    gl_Position = u_p * u_v * u_m * vec4(a_position, 1.0);
+    // Apply rotation to the particle's position
+    vec2 rotatedPosition = rotation * a_position.xy;
+
+    // Update the final position
+    vec3 finalPosition = a_center + vec3(rotatedPosition, a_position.z);
+
+    // Convert to clip space
+    gl_Position = u_p * u_v * vec4(finalPosition, 1.0);
+    
+    v_texcoord = a_position.xy;
 
 }
