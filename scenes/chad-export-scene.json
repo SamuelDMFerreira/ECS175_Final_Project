@@ -656,27 +656,32 @@
                             "Keyframes":
                             [
                                 {
-                                    "timeStamp": 4.0,
+                                    "timeStamp": 21.0,
+                                    "position": [0, 0, 0],
+                                    "rotation": [0,0,0,1]
+                                }, 
+                                {
+                                    "timeStamp": 22.0,
                                     "position": [-0.7713639140129089, 0, 0.48729017376899],
                                     "rotation": [0,0,0,1]
                                 },
                                 {
-                                    "timeStamp": 5.0,
+                                    "timeStamp": 23.0,
                                     "position": [-0.7713639140129089, -0.5, 0.48729017376899],
                                     "rotation": [0,0,0,1]
                                 },
                                 {
-                                    "timeStamp": 6.0,
+                                    "timeStamp": 24.0,
                                     "position": [0,-0.5,0],
                                     "rotation": [0,0,0,1]
                                 },
                                 {
-                                    "timeStamp": 18.0,
+                                    "timeStamp": 25.0,
                                     "position": [0, 0, 0],
                                     "rotation": [0,0,0,1]
                                 }
                             ],
-                            "duration": 20.0, 
+                            "duration": 28.0, 
                             "loops": true
                         },
                         "children": []
@@ -708,27 +713,32 @@
                             "Keyframes":
                             [
                                 {
-                                    "timeStamp": 4.0,
+                                    "timeStamp": 21.0,
+                                    "position": [0, 0, 0],
+                                    "rotation": [0,0,0,1]
+                                }, 
+                                {
+                                    "timeStamp": 22.0,
                                     "position": [-0.7713639140129089, 0, 0.48729017376899],
                                     "rotation": [0,0,0,1]
                                 },
                                 {
-                                    "timeStamp": 5.0,
+                                    "timeStamp": 23.0,
                                     "position": [-0.7713639140129089, -0.5, 0.48729017376899],
                                     "rotation": [0,0,0,1]
                                 },
                                 {
-                                    "timeStamp": 6.0,
+                                    "timeStamp": 24.0,
                                     "position": [0,-0.5,0],
                                     "rotation": [0,0,0,1]
                                 },
                                 {
-                                    "timeStamp": 18.0,
+                                    "timeStamp": 25.0,
                                     "position": [0, 0, 0],
                                     "rotation": [0,0,0,1]
                                 }
                             ],
-                            "duration": 20.0, 
+                            "duration": 28.0, 
                             "loops": true
                         },
                         "children": []
@@ -760,27 +770,32 @@
                             "Keyframes":
                             [
                                 {
-                                    "timeStamp": 4.0,
+                                    "timeStamp": 21.0,
+                                    "position": [0, 0, 0],
+                                    "rotation": [0,0,0,1]
+                                }, 
+                                {
+                                    "timeStamp": 22.0,
                                     "position": [-0.7713639140129089, 0, 0.48729017376899],
                                     "rotation": [0,0,0,1]
                                 },
                                 {
-                                    "timeStamp": 5.0,
+                                    "timeStamp": 23.0,
                                     "position": [-0.7713639140129089, -0.5, 0.48729017376899],
                                     "rotation": [0,0,0,1]
                                 },
                                 {
-                                    "timeStamp": 6.0,
+                                    "timeStamp": 24.0,
                                     "position": [0,-0.5,0],
                                     "rotation": [0,0,0,1]
                                 },
                                 {
-                                    "timeStamp": 18.0,
+                                    "timeStamp": 25.0,
                                     "position": [0, 0, 0],
                                     "rotation": [0,0,0,1]
                                 }
                             ],
-                            "duration": 20.0, 
+                            "duration": 28.0, 
                             "loops": true
                         },
                         "children": []
@@ -812,27 +827,32 @@
                             "Keyframes":
                             [
                                 {
-                                    "timeStamp": 4.0,
+                                    "timeStamp": 21.0,
+                                    "position": [0, 0, 0],
+                                    "rotation": [0,0,0,1]
+                                }, 
+                                {
+                                    "timeStamp": 22.0,
                                     "position": [-0.7713639140129089, 0, 0.48729017376899],
                                     "rotation": [0,0,0,1]
                                 },
                                 {
-                                    "timeStamp": 5.0,
+                                    "timeStamp": 23.0,
                                     "position": [-0.7713639140129089, -0.5, 0.48729017376899],
                                     "rotation": [0,0,0,1]
                                 },
                                 {
-                                    "timeStamp": 6.0,
+                                    "timeStamp": 24.0,
                                     "position": [0,-0.5,0],
                                     "rotation": [0,0,0,1]
                                 },
                                 {
-                                    "timeStamp": 18.0,
+                                    "timeStamp": 25.0,
                                     "position": [0, 0, 0],
                                     "rotation": [0,0,0,1]
                                 }
                             ],
-                            "duration": 20.0, 
+                            "duration": 28.0, 
                             "loops": true
                         },
                         "children": []
