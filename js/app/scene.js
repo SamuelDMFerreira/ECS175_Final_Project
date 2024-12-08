@@ -1,13 +1,13 @@
 'use strict'
 
 import { ShadedObject3D } from "../../assignment3.object3d.js"
-import { SHADER_MAX_LIGHTS, hex2rgb, json2transform } from "../utils/utils.js"
+import { SHADER_MAX_LIGHTS, hex2rgb, json2transform, json2animation } from "../utils/utils.js"
 import * as mat4 from "../lib/glmatrix/mat4.js"
 import * as quat4 from "../lib/glmatrix/quat.js"
 
 import { OBJLoader } from "../../assignment3.objloader.js"
 import { Light, AmbientLight, DirectionalLight, PointLight } from "./light.js"
-
+import { Keyframe, Animation } from "../../animations/animations.js"
 
 /**
  * A Scene represents a set of objects to be drawn on screen
@@ -188,7 +188,8 @@ class Scene {
                 node = new SceneNode(
                     node_config.name, 
                     node_config.type, 
-                    'transformation' in node_config ? json2transform(node_config.transformation) : mat4.create()
+                    'transformation' in node_config ? json2transform(node_config.transformation) : mat4.create(),
+                    'animation' in node_config ? json2animation(node_config.animation) : new Animation(null,0.0,0.0) 
                 )
                 break
             case 'model': // Geometry node containing a model
@@ -196,7 +197,8 @@ class Scene {
                     this.instantiateModel(node_config.content, gl, shader), // Field "content" refers to the model to be associated with this node
                     node_config.name,
                     node_config.type,
-                    'transformation' in node_config ? json2transform(node_config.transformation) : mat4.create()
+                    'transformation' in node_config ? json2transform(node_config.transformation) : mat4.create(),
+                    'animation' in node_config ? json2animation(node_config.animation) : new Animation(null,0.0,0.0) 
                 )
                 break
             case 'light': // Light node containing a light
@@ -204,7 +206,8 @@ class Scene {
                     this.instantiateLight(node_config.content, gl, shader, light_shader), // Field "content" refers to the light to be associated with this node
                     node_config.name,
                     node_config.type,
-                    'transformation' in node_config ? json2transform(node_config.transformation) : mat4.create()
+                    'transformation' in node_config ? json2transform(node_config.transformation) : mat4.create(),
+                    'animation' in node_config ? json2animation(node_config.animation) : new Animation(null,0.0,0.0) 
                 )
                 break
         }
@@ -276,13 +279,14 @@ class SceneNode {
      * @param {String} type Type of the node ("node"|"model")
      * @param {mat4} transformation The local transformation of the node
      */
-    constructor( name, type, transformation ) {
+    constructor( name, type, transformation, animation) {
         this.name = name
         this.type = type
         this.transformation = transformation
         this.world_transformation = this.calculateWorldTransformation()
         this.parent = null
         this.children = []
+        this.animation = animation;
     }
 
     /**
@@ -332,6 +336,16 @@ class SceneNode {
      */
     getTransformation( ) {
         return this.transformation
+    }
+
+    /**
+     * Getter for this node's animation
+     * 
+     * @returns {Animation} this node animation 
+     */
+    getAnimation()
+    {
+        return this.animation;
     }
 
     /**
@@ -438,8 +452,8 @@ class ModelNode extends SceneNode {
      * @param {String} type Type of this node (always "model")
      * @param {mat4} transformation The local transformation of the node
      */
-    constructor( obj3d, name, type, transformation ) {
-        super(name, type, transformation)
+    constructor( obj3d, name, type, transformation, animation) {
+        super(name, type, transformation, animation)
 
         this.obj3d = obj3d
     }
@@ -500,8 +514,8 @@ class ModelNode extends SceneNode {
  */
 class LightNode extends SceneNode {
 
-    constructor( light, name, type, transformation ) {
-        super( name, type, transformation )
+    constructor( light, name, type, transformation, animation ) {
+        super( name, type, transformation, animation )
 
         this.light = light
     }
