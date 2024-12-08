@@ -1,0 +1,774 @@
+
+{
+    "models": [
+        {
+            "name": "Flat_Terrain",
+            "obj": "./models/export-scene/Flat_Terrain.obj"
+        },
+        {
+            "name": "Gate1",
+            "obj": "./models/export-scene/Gate1.obj"
+        },
+        {
+            "name": "Gate2",
+            "obj": "./models/export-scene/Gate2.obj"
+        },
+        {
+            "name": "Glass_Pane",
+            "obj": "./models/export-scene/Glass_Pane.obj"
+        },
+        {
+            "name": "Gravel",
+            "obj": "./models/export-scene/Gravel.obj"
+        },
+        {
+            "name": "Headlights_Glass",
+            "obj": "./models/export-scene/Headlights_Glass.obj"
+        },
+        {
+            "name": "Metal",
+            "obj": "./models/export-scene/Metal.obj"
+        },
+        {
+            "name": "Metal_Sheets",
+            "obj": "./models/export-scene/Metal_Sheets.obj"
+        },
+        {
+            "name": "Railroad",
+            "obj": "./models/export-scene/Railroad.obj"
+        },
+        {
+            "name": "Railway_Line_Posts",
+            "obj": "./models/export-scene/Railway_Line_Posts.obj"
+        },
+        {
+            "name": "Road",
+            "obj": "./models/export-scene/Road.obj"
+        },
+        {
+            "name": "Road_Trim",
+            "obj": "./models/export-scene/Road_Trim.obj"
+        },
+        {
+            "name": "Stand1",
+            "obj": "./models/export-scene/Stand1.obj"
+        },
+        {
+            "name": "Stand2",
+            "obj": "./models/export-scene/Stand2.obj"
+        },
+        {
+            "name": "Train_Front",
+            "obj": "./models/export-scene/Train_Front.obj"
+        },
+        {
+            "name": "Train_Middle1",
+            "obj": "./models/export-scene/Train_Middle1.obj"
+        },
+        {
+            "name": "Train_Middle2",
+            "obj": "./models/export-scene/Train_Middle2.obj"
+        },
+        {
+            "name": "Train_Rear",
+            "obj": "./models/export-scene/Train_Rear.obj"
+        },
+        {
+            "name": "Train_Track_Lights",
+            "obj": "./models/export-scene/Train_Track_Lights.obj"
+        },
+        {
+            "name": "Train_Track_Lights_001",
+            "obj": "./models/export-scene/Train_Track_Lights_001.obj"
+        },
+        {
+            "name": "Walls",
+            "obj": "./models/export-scene/Walls.obj"
+        },
+        {
+            "name": "Wheel_D003",
+            "obj": "./models/export-scene/Wheel_D003.obj"
+        },
+        {
+            "name": "Wires",
+            "obj": "./models/export-scene/Wires.obj"
+        },
+        {
+            "name": "Wooden_Beam",
+            "obj": "./models/export-scene/Wooden_Beam.obj"
+        },
+        {
+            "name": "Bottom",
+            "obj": "./models/export-scene/Bottom.obj"
+        },
+        {
+            "name": "Box",
+            "obj": "./models/export-scene/Box.obj"
+        },
+        {
+            "name": "Concrete_Pole",
+            "obj": "./models/export-scene/Concrete_Pole.obj"
+        }
+    ],
+    "lights": [
+        {
+            "name": "ambient1",
+            "type": "ambient",
+            "color": "#FFFFFF",
+            "intensity": 0.1
+        },
+        {
+            "name": "point1",
+            "type": "point",
+            "color": "#FFFFFF",
+            "intensity": 4.0
+        }
+    ],
+    "scenegraph": {
+        "name": "root",
+        "type": "node",
+        "transformation": {
+            "translation": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        "children": [
+            {
+                "name": "lights_node",
+                "type": "node",
+                "children": [
+                    {
+                        "name": "ambientlight1",
+                        "type": "light",
+                        "content": "ambient1"
+                    },
+                    {
+                        "name": "pointlight1",
+                        "type": "light",
+                        "content": "point1",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0.8,
+                                0
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "models_node",
+                "type": "node",
+                "children": [
+                    {
+                        "name": "Flat_Terrain",
+                        "type": "model",
+                        "content": "Flat_Terrain",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Gate1",
+                        "type": "model",
+                        "content": "Gate1",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Gate2",
+                        "type": "model",
+                        "content": "Gate2",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Glass_Pane",
+                        "type": "model",
+                        "content": "Glass_Pane",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Gravel",
+                        "type": "model",
+                        "content": "Gravel",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Headlights_Glass",
+                        "type": "model",
+                        "content": "Headlights_Glass",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Metal",
+                        "type": "model",
+                        "content": "Metal",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Metal_Sheets",
+                        "type": "model",
+                        "content": "Metal_Sheets",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Railroad",
+                        "type": "model",
+                        "content": "Railroad",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Railway_Line_Posts",
+                        "type": "model",
+                        "content": "Railway_Line_Posts",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Road",
+                        "type": "model",
+                        "content": "Road",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Road_Trim",
+                        "type": "model",
+                        "content": "Road_Trim",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Stand1",
+                        "type": "model",
+                        "content": "Stand1",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Stand2",
+                        "type": "model",
+                        "content": "Stand2",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Train_Front",
+                        "type": "model",
+                        "content": "Train_Front",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "animation":
+                        {
+                            "Keyframes":
+                            [
+                                {
+                                    "timeStamp": 4.0,
+                                    "position": [1,0,0],
+                                    "rotation": [1,0,0,0]
+                                },
+                                {
+                                    "timeStamp": 8.0,
+                                    "position": [0,0,0],
+                                    "rotation": [1,0,0,0]
+                                }
+                            ],
+                            "duration": 10.0, 
+                            "loops": true
+                        }, 
+                        "children": []
+                    },
+                    {
+                        "name": "Train_Middle1",
+                        "type": "model",
+                        "content": "Train_Middle1",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Train_Middle2",
+                        "type": "model",
+                        "content": "Train_Middle2",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Train_Rear",
+                        "type": "model",
+                        "content": "Train_Rear",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Train_Track_Lights",
+                        "type": "model",
+                        "content": "Train_Track_Lights",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Train_Track_Lights_001",
+                        "type": "model",
+                        "content": "Train_Track_Lights_001",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Wheel_D003",
+                        "type": "model",
+                        "content": "Wheel_D003",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Bottom",
+                        "type": "model",
+                        "content": "Bottom",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Box",
+                        "type": "model",
+                        "content": "Box",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Concrete_Pole",
+                        "type": "model",
+                        "content": "Concrete_Pole",
+                        "transformation": {
+                            "translation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    }
+}
